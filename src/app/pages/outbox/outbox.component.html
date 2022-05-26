@@ -1,0 +1,31 @@
+<div>
+    <app-nav></app-nav>
+    <div class="uk-container">
+       <h1>Outbox</h1>
+        <table *ngIf="emails.length"  class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+            <thead>
+                <tr>
+                    <th class="uk-width-small">To</th>
+                    <th >From</th>
+                    <th class="uk-width-small">Type</th>
+                    <th class="uk-width-small">Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let email of emails">
+                    <td class="uk-table-link">
+                        <a class="uk-link-reset" href="">{{email.to}}</a>
+                    </td>
+                    <td class="uk-text-truncate">{{email.from}}</td>
+                    <ng-container *ngIf="email.category === '0'">
+                        <td style="color: rgb(3, 189, 12);" class="uk-text-truncate">Safe</td>
+                    </ng-container>
+                    <ng-container *ngIf="email.category === '1'">
+                        <td style="color: rgb(245, 76, 76);" class="uk-text-truncate">Spam</td>
+                    </ng-container>
+                    <td class="uk-text-nowrap">{{email.body}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" class="uk-container">
+    <div style="margin-top: 120px;">
+        <h1>Sign up</h1>
+        <form  (ngSubmit)="onSubmit()">
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input name="name" [(ngModel)]="name" class="uk-input" placeholder="Name" type="text">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input name="email" [(ngModel)]="email" class="uk-input" placeholder="Email" type="email">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    <input name="password" [(ngModel)]="password"  class="uk-input" placeholder="Password" type="password">
+                </div>
+            </div>
+            <p style="font-size: 12px; font-weight: bold; color: rgb(2, 2, 2);">Already have an account<a style="text-decoration: none;" href="/"> login </a></p> <br>
+            <button type="submit" class="uk-button uk-button-secondary">Signup</button>
+        </form>
+    </div>
+</div>
